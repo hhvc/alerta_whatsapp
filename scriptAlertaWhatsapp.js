@@ -1,4 +1,10 @@
-async function enviarAlertasEstafa(maxAlertas = 10) {
+// Variables configurables
+const MensajeAEnviar = "Alerta de estafa n°"; // Mensaje base que se enviará
+const CantidadMensajesAEnviar = 10; // Número total de mensajes a enviar
+const TiempoEnMilisegundosEntreMensajeYMensaje = 5000; // Intervalo entre mensajes en milisegundos
+
+// Función principal
+async function enviarAlertasEstafa() {
   const main =
     document.querySelector("#main") || document.querySelector("._3FRCZ");
   if (!main) {
@@ -14,14 +20,13 @@ async function enviarAlertasEstafa(maxAlertas = 10) {
     return;
   }
 
-  for (let alertaNumero = 1; alertaNumero <= maxAlertas; alertaNumero++) {
-    const mensaje = `Alerta de estafa n° ${alertaNumero}`;
+  for (let alertaNumero = 1; alertaNumero <= CantidadMensajesAEnviar; alertaNumero++) {
+    const mensaje = `${MensajeAEnviar} ${alertaNumero}`;
 
     textarea.focus();
     document.execCommand("insertText", false, mensaje);
     textarea.dispatchEvent(new Event("input", { bubbles: true }));
 
-    // Esperamos para que el botón de enviar aparezca en caso de que sea necesario
     await new Promise((resolve) => setTimeout(resolve, 100));
 
     const botonEnviar = main
@@ -32,14 +37,12 @@ async function enviarAlertasEstafa(maxAlertas = 10) {
       return;
     }
 
-    // Hacemos clic en el botón de enviar
     botonEnviar.click();
-
     console.log(`Mensaje enviado: ${mensaje}`);
 
-    // Esperamos 5 segundos antes de enviar la siguiente alerta
-    await new Promise((resolve) => setTimeout(resolve, 5000));
+    await new Promise((resolve) => setTimeout(resolve, TiempoEnMilisegundosEntreMensajeYMensaje));
   }
 }
 
-enviarAlertasEstafa(10); // Cambia el número 10 por la cantidad de alertas que desees enviar
+// Llama a la función para enviar los mensajes o alertas
+enviarAlertasEstafa();

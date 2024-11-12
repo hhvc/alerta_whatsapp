@@ -1,16 +1,19 @@
-# Alerta WhatsApp
+# 📢 Alerta WhatsApp
 
 Este es un script sencillo para enviar una cantidad definida de mensajes automáticos en una conversación de WhatsApp Web, ideal para emitir alertas o notificaciones repetitivas.
+
 
 ## 🚀 Características
 
 - Envío de mensajes automáticos en WhatsApp Web.
 - Personalización del mensaje, cantidad de envíos y tiempo entre cada mensaje.
 
+
 ## 📋 Requisitos
 
 1. **WhatsApp Web**: Accede a WhatsApp Web en tu navegador y abre la conversación donde deseas enviar los mensajes.
 2. **Navegador Web**: Se recomienda usar Chrome o Firefox para facilitar la ejecución del script.
+
 
 ## 🛠 Instrucciones de Uso
 
@@ -23,17 +26,15 @@ Este es un script sencillo para enviar una cantidad definida de mensajes automá
    - En navegadores como Firefox, escribe `permitir pegado` en la consola para habilitar la opción de pegar el script.
 5. Pega el código del script en la consola y presiona **Enter**.
 
+
 ## ⚙️ Configuración
 
 Antes de ejecutar el script, puedes personalizar los siguientes parámetros dentro del código:
 
-- **maxAlertas**: Define la cantidad de mensajes que deseas enviar.
-- **intervalo**: Ajusta el tiempo (en milisegundos) entre cada mensaje.
-- **mensaje**: Cambia el texto del mensaje si es necesario.
+- **MensajeAEnviar**: Cambia el texto del mensaje si es necesario.
+- **CantidadMensajesAEnviar**: Define la cantidad de mensajes que deseas enviar.
+- **TiempoEnMilisegundosEntreMensajeYMensaje**: Ajusta el tiempo (en milisegundos) entre cada mensaje.
 
-Ejemplo de llamada:
-```javascript
-enviarAlertasEstafa(10, "Alerta de estafa n°", 5000);
 
 ## 🚧 Notas
 
